@@ -9,7 +9,12 @@ func _ready() -> void:
 	cone_game.pressed.connect(cone_pressed)
 	pint_game.pressed.connect(pint_pressed)
 	pong_game.pressed.connect(pong_pressed)
+	if GlobalAudio.cone_complete == false:
+		pint_game.visible = false
+	if GlobalAudio.pint_complete == false:
+		pong_game.visible == false
 	pass # Replace with function body.
+
 
 func cone_pressed():
 	get_tree().change_scene_to_file("res://cone game/cone game.tscn")

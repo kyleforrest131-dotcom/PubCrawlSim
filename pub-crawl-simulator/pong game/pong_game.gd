@@ -5,6 +5,8 @@ extends Node2D
 func _ready() -> void:
 	pass # Replace with function body.
 
+# Use this when the game is beaten
+# GlobalAudio.pong_complete = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

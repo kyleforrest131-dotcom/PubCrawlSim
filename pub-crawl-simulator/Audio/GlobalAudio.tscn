@@ -14,6 +14,7 @@ script/source = "extends Node2D
 func _ready() -> void:
 	pass # Replace with function body.
 	
+	
 func click():
 	button_click.play()
 
@@ -28,6 +29,11 @@ func music_volume(volume):
 	
 func music_play():
 	return pub_crawl_sim_background_music.playing
+	
+var pint_complete = false
+var pong_complete = false
+var cone_complete = false
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

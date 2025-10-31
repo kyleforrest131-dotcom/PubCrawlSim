@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://bct0bfvw3sjx3"]
+[gd_scene load_steps=2 format=3 uid="uid://bct0bfvw3sjx3"]
+
+[ext_resource type="Script" uid="uid://latcufag80p0" path="res://pong game/pong_game.gd" id="1_wgo7l"]
 
 [node name="PongGame" type="Node2D"]
+script = ExtResource("1_wgo7l")
