@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bct0bfvw3sjx3"]
+
+[node name="PongGame" type="Node2D"]

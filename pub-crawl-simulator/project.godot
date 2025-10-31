@@ -12,11 +12,10 @@ config_version=5
 
 config/name="Pub Crawl Simulator"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalAudio="*res://Audio/Global Audio.tscn"
+GlobalAudio="*res://Audio/global_audio.gd"
 
 [rendering]
 
