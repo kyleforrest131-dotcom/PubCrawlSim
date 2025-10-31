@@ -17,6 +17,7 @@ func _ready() -> void:
 
 func play_pressed():
 	GlobalAudio.back_music_stop()
+	get_tree().change_scene_to_file("res://level select/level select.tscn")
 	pass
 
 func options_pressed():
