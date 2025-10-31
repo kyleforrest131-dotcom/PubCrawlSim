@@ -21,9 +21,11 @@ func play_pressed():
 	pass
 
 func options_pressed():
+	get_tree().change_scene_to_file("res://main menu/options.tscn")
 	pass
 	
 func credits_pressed():
+	get_tree().change_scene_to_file("res://main menu/credits.tscn")
 	pass
 	
 func exit_pressed():

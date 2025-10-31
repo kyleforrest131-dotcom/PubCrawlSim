@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpu3oypvj00pq"]
+
+[ext_resource type="Script" uid="uid://cl43b44su50p" path="res://main menu/options.gd" id="1_mjnsp"]
+
+[node name="Options" type="Node2D"]
+script = ExtResource("1_mjnsp")
+
+[node name="Volume" type="HSlider" parent="."]
+offset_left = 11.0
+offset_top = 3.0
+offset_right = 58.0
+offset_bottom = 19.0
+max_value = 1.0
+step = 0.0
+value = 1.0
