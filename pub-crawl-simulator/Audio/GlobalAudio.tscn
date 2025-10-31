@@ -25,6 +25,9 @@ func back_music_stop():
 	
 func music_volume(volume):
 	pub_crawl_sim_background_music.set_volume_linear(volume)
+	
+func music_play():
+	return pub_crawl_sim_background_music.playing
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

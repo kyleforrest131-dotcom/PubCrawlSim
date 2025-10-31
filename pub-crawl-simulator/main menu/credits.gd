@@ -1,17 +1,11 @@
 extends Node2D
-@onready var volume: HSlider = $Volume
 @onready var back: Button = $Back
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	volume.value_changed.connect(volume_slide)
 	back.pressed.connect(back_pressed)
 	pass # Replace with function body.
-
-func volume_slide(volume_val):
-	GlobalAudio.music_volume(volume_val)
-	pass
 
 func back_pressed():
 	get_tree().change_scene_to_file("res://main menu/menu.tscn")

@@ -8,7 +8,8 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	GlobalAudio.back_music_start()
+	if GlobalAudio.music_play() == false:
+		GlobalAudio.back_music_start()
 	play_button.pressed.connect(play_pressed)
 	options_button.pressed.connect(options_pressed)
 	credits_button.pressed.connect(credits_pressed)
