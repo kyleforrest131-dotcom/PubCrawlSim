@@ -12,7 +12,7 @@ func _ready() -> void:
 	if GlobalAudio.cone_complete == false:
 		pint_game.visible = false
 	if GlobalAudio.pint_complete == false:
-		pong_game.visible == false
+		pong_game.visible = false
 	pass # Replace with function body.
 
 

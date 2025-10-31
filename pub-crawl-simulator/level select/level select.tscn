@@ -10,15 +10,18 @@ offset_left = 51.0
 offset_top = 18.0
 offset_right = 59.0
 offset_bottom = 26.0
+text = "Cone"
 
 [node name="Pint Game" type="Button" parent="."]
 offset_left = 67.0
 offset_top = 53.0
 offset_right = 75.0
 offset_bottom = 61.0
+text = "Pint"
 
 [node name="Pong Game" type="Button" parent="."]
 offset_left = 122.0
 offset_top = 37.0
 offset_right = 130.0
 offset_bottom = 45.0
+text = "Pong"

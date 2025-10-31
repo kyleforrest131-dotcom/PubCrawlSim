@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://cdnwlk1gj5urs"]
+[gd_scene load_steps=2 format=3 uid="uid://cdnwlk1gj5urs"]
+
+[ext_resource type="Script" uid="uid://t0rfra0a4fw1" path="res://cone game/cone_game.gd" id="1_uq8fd"]
 
 [node name="ConeGame" type="Node2D"]
+script = ExtResource("1_uq8fd")

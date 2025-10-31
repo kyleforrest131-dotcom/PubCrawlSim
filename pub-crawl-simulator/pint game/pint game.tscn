@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://c5we2j5a2u4ix"]
+[gd_scene load_steps=2 format=3 uid="uid://c5we2j5a2u4ix"]
+
+[ext_resource type="Script" uid="uid://dutdjwwtorilr" path="res://pint game/pint_game.gd" id="1_rnivv"]
 
 [node name="PintGame" type="Node2D"]
+script = ExtResource("1_rnivv")
