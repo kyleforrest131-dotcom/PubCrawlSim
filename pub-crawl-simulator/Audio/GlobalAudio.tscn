@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://ny6sju2t2vbe"]
+
+[ext_resource type="AudioStream" uid="uid://drkqtvnrbh7gi" path="res://Audio/Button Click.mp3" id="2_7a50j"]
+[ext_resource type="AudioStream" uid="uid://dbkopl4sdvijo" path="res://Audio/PubCrawlSim Background Music.mp3" id="3_lflrn"]
+
+[sub_resource type="GDScript" id="GDScript_pwtts"]
+script/source = "extends Node2D
+@onready var pub_crawl_sim_background_music: AudioStreamPlayer = $PubCrawlSimBackgroundMusic
+@onready var button_click: AudioStreamPlayer = $ButtonClick
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+	
+func click():
+	button_click.play()
+
+func back_music_start():
+	pub_crawl_sim_background_music.play()
+	
+func back_music_stop():
+	pub_crawl_sim_background_music.stop()
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="GlobalAudio" type="Node2D"]
+script = SubResource("GDScript_pwtts")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_7a50j")
+
+[node name="PubCrawlSimBackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_lflrn")
+parameters/looping = false
