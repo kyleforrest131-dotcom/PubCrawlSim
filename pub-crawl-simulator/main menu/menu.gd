@@ -1,8 +1,9 @@
 extends Control
-@onready var play_button: Button = $"MarginContainer/VBoxContainer/Play Button"
-@onready var options_button: Button = $"MarginContainer/VBoxContainer/Options Button"
-@onready var credits_button: Button = $"MarginContainer/VBoxContainer/Credits Button"
-@onready var exit_button: Button = $"MarginContainer/VBoxContainer/Exit Button"
+@onready var play_button: Button = $"Play Button"
+@onready var options_button: Button = $"Options Button"
+@onready var credits_button: Button = $"Credits Button"
+@onready var exit_button: Button = $"Exit Button"
+
 
 
 # Called when the node enters the scene tree for the first time.

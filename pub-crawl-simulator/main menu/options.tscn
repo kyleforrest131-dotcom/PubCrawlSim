@@ -1,15 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpu3oypvj00pq"]
+[gd_scene load_steps=4 format=3 uid="uid://cpu3oypvj00pq"]
 
 [ext_resource type="Script" uid="uid://cl43b44su50p" path="res://main menu/options.gd" id="1_mjnsp"]
+[ext_resource type="Theme" uid="uid://dqbfem4tkcax7" path="res://Art/Menu Buttons.tres" id="2_1ohbj"]
+[ext_resource type="Texture2D" uid="uid://cg4a4ki6td3vn" path="res://Art/Pub Crawl Simulator Menu Screen.png" id="3_ijm0h"]
 
 [node name="Options" type="Node2D"]
 script = ExtResource("1_mjnsp")
+metadata/_edit_lock_ = true
 
 [node name="Volume" type="HSlider" parent="."]
-offset_left = 20.0
-offset_top = 7.0
-offset_right = 131.0
-offset_bottom = 44.78723
+offset_left = 494.0
+offset_top = 156.0
+offset_right = 605.0
+offset_bottom = 193.78723
+theme = ExtResource("2_1ohbj")
 max_value = 1.0
 step = 0.0
 value = 1.0
@@ -25,21 +29,48 @@ text = "Volume"
 
 [node name="Label2" type="Label" parent="Volume"]
 layout_mode = 0
-offset_left = -12.0
-offset_top = 6.0
-offset_right = 28.0
-offset_bottom = 29.0
+offset_left = -8.0
+offset_top = 10.0
+offset_right = 32.0
+offset_bottom = 33.0
 text = "0"
 
 [node name="Label3" type="Label" parent="Volume"]
 layout_mode = 0
-offset_left = 112.0
-offset_top = 6.0
-offset_right = 152.0
-offset_bottom = 29.0
+offset_left = 113.0
+offset_top = 9.0
+offset_right = 153.0
+offset_bottom = 32.0
 text = "100"
 
 [node name="Back" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 525.0
+offset_top = 203.0
+offset_right = 575.0
+offset_bottom = 239.0
+theme = ExtResource("2_1ohbj")
 text = "Back"
+
+[node name="Full Scrn" type="CheckButton" parent="."]
+offset_left = 515.0
+offset_top = 124.0
+offset_right = 559.0
+offset_bottom = 152.0
+theme = ExtResource("2_1ohbj")
+
+[node name="Label" type="Label" parent="Full Scrn"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 5.0
+offset_right = 109.0
+offset_bottom = 44.0
+theme = ExtResource("2_1ohbj")
+text = "Full Screen
+"
+
+[node name="PubCrawlSimulatorMenuScreen" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(639, 333)
+scale = Vector2(0.685, 0.685)
+texture = ExtResource("3_ijm0h")
+metadata/_edit_lock_ = true

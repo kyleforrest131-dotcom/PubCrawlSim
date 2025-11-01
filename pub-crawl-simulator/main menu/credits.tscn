@@ -1,11 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://y4krdeotssam"]
+[gd_scene load_steps=4 format=3 uid="uid://y4krdeotssam"]
 
 [ext_resource type="Script" uid="uid://pfgbw2bg2ttm" path="res://main menu/credits.gd" id="1_vldhd"]
+[ext_resource type="Theme" uid="uid://dqbfem4tkcax7" path="res://Art/Menu Buttons.tres" id="2_bsjeq"]
+[ext_resource type="Texture2D" uid="uid://cg4a4ki6td3vn" path="res://Art/Pub Crawl Simulator Menu Screen.png" id="3_7lpd6"]
 
 [node name="Credits" type="Node2D"]
 script = ExtResource("1_vldhd")
+metadata/_edit_lock_ = true
 
 [node name="Back" type="Button" parent="."]
 offset_right = 8.0
 offset_bottom = 8.0
+theme = ExtResource("2_bsjeq")
 text = "Back"
+
+[node name="PubCrawlSimulatorMenuScreen" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(639, 333)
+scale = Vector2(0.685, 0.685)
+texture = ExtResource("3_7lpd6")
+metadata/_edit_lock_ = true

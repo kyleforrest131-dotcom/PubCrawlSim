@@ -1,36 +1,62 @@
-[gd_scene load_steps=2 format=3 uid="uid://cl0iwtocet34u"]
+[gd_scene load_steps=4 format=3 uid="uid://cl0iwtocet34u"]
 
 [ext_resource type="Script" uid="uid://b8jj73bbc88eo" path="res://main menu/menu.gd" id="1_lhxys"]
+[ext_resource type="Theme" uid="uid://dqbfem4tkcax7" path="res://Art/Menu Buttons.tres" id="2_5l6y1"]
+[ext_resource type="Texture2D" uid="uid://cg4a4ki6td3vn" path="res://Art/Pub Crawl Simulator Menu Screen.png" id="3_5l6y1"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 34.0
+offset_top = 6.0
+offset_right = 34.0
+offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_5l6y1")
 script = ExtResource("1_lhxys")
+metadata/_edit_lock_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="Play Button" type="Button" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-
-[node name="Play Button" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
+offset_left = 461.0
+offset_top = 280.0
+offset_right = 531.0
+offset_bottom = 316.0
+theme = ExtResource("2_5l6y1")
 text = "Play"
 
-[node name="Options Button" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
+[node name="Options Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 324.0
+offset_right = 536.0
+offset_bottom = 360.0
+theme = ExtResource("2_5l6y1")
 text = "Options"
 
-[node name="Credits Button" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
+[node name="Credits Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 369.0
+offset_right = 535.0
+offset_bottom = 405.0
+theme = ExtResource("2_5l6y1")
 text = "Credits"
 
-[node name="Exit Button" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
+[node name="Exit Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 417.0
+offset_right = 534.0
+offset_bottom = 453.0
 text = "Exit"
+
+[node name="PubCrawlSimulatorMenuScreen" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(605, 327)
+scale = Vector2(0.685, 0.685)
+texture = ExtResource("3_5l6y1")
+metadata/_edit_lock_ = true
