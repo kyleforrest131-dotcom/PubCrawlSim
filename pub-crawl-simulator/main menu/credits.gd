@@ -9,6 +9,7 @@ func _ready() -> void:
 	
 
 func back_pressed():
+	GlobalAudio.click()
 	get_tree().change_scene_to_file("res://main menu/menu.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

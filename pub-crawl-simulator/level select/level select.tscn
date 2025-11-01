@@ -25,3 +25,10 @@ offset_top = 37.0
 offset_right = 130.0
 offset_bottom = 45.0
 text = "Pong"
+
+[node name="Back" type="Button" parent="."]
+offset_left = 370.0
+offset_top = 94.0
+offset_right = 415.0
+offset_bottom = 125.0
+text = "Back"

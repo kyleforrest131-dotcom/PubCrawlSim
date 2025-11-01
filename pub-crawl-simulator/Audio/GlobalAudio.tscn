@@ -45,6 +45,7 @@ script = SubResource("GDScript_pwtts")
 
 [node name="ButtonClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_7a50j")
+volume_db = -6.5
 
 [node name="PubCrawlSimBackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_lflrn")

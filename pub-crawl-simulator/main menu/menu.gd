@@ -17,19 +17,23 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func play_pressed():
+	GlobalAudio.click()
 	GlobalAudio.back_music_stop()
 	get_tree().change_scene_to_file("res://level select/level select.tscn")
 	pass
 
 func options_pressed():
+	GlobalAudio.click()
 	get_tree().change_scene_to_file("res://main menu/options.tscn")
 	pass
 	
 func credits_pressed():
+	GlobalAudio.click()
 	get_tree().change_scene_to_file("res://main menu/credits.tscn")
 	pass
 	
 func exit_pressed():
+	GlobalAudio.click()
 	get_tree().quit()
 	pass
 
