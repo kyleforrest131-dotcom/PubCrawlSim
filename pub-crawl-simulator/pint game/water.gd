@@ -5,6 +5,11 @@ var attrForce: float = 1000
 
 
 func _ready() -> void:
+	var viewport_texture = $"Particle Viewport".get_texture()
+	var mat := $TextureRect.material as ShaderMaterial
+	mat.set_shader_parameter("SCREEN_TEXTURE", viewport_texture)
+
+	$TextureRect.texture = viewport_texture
 	get_tree().paused = false
 
 func _process(delta: float) -> void:

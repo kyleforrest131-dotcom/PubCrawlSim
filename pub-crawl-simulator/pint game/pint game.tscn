@@ -1,22 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://brfh7551nvc16"]
+[gd_scene load_steps=6 format=3 uid="uid://brfh7551nvc16"]
 
 [ext_resource type="Script" uid="uid://7ekqvm21ha6r" path="res://pint game/water.gd" id="1_s3ltw"]
 [ext_resource type="Shader" uid="uid://oksad203ev8j" path="res://pint game/waterEffect.gdshader" id="3_7uqn3"]
+[ext_resource type="Texture2D" uid="uid://dnjr6pnjyoej6" path="res://pint game/Beer taps.jpg" id="3_wlvwx"]
 [ext_resource type="Script" uid="uid://livuw5awvw2q" path="res://pint game/waterGenerator.gd" id="5_hitjv"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2v82y"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wlvwx"]
 shader = ExtResource("3_7uqn3")
-shader_parameter/TG_COLOR = Color(1, 0, 1, 1)
-shader_parameter/color_detect_threshold = 0.7
+shader_parameter/WATER_COLOR = Vector4(1, 0.8549, 0, 0.65)
 
 [node name="supaWatar" type="Node2D"]
 script = ExtResource("1_s3ltw")
-
-[node name="waterShader" type="Sprite2D" parent="."]
-z_index = 1
-material = SubResource("ShaderMaterial_2v82y")
-position = Vector2(617, 263)
-scale = Vector2(9.25, 9.0625)
 
 [node name="map" type="StaticBody2D" parent="."]
 position = Vector2(-2, 5)
@@ -24,9 +18,29 @@ position = Vector2(-2, 5)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="map"]
 position = Vector2(284, 323)
 scale = Vector2(0.44194877, 0.44194877)
-polygon = PackedVector2Array(-16, 648, 1168, 648, 1168, -504, 1032, 480, 890.31494, 449.94556, 768, 424, 760, -72, 624, 504, 990, 619, 24, 616, 392, 480, 616, -120, 544, -56, 400, -24, 232, -64, 128, -168, -16, -504)
+polygon = PackedVector2Array(961.65, -22.627014, 968.4381, -11.313477, 896.0315, 104.08447, 785.15894, 203.64355, 701.43884, 280.57556, 649.3966, 334.8805, 565.6765, 418.6006, 531.73584, 488.7445, 504.58337, 567.9392, 300.93988, 484.21912, 224.00787, 386.92273, 588.3036, -97.296326, 635.8203, -147.07587, 656.1847, -144.81317, 520.42236, 38.466003, 470.64282, 113.135315, 260.21118, 384.66003, 321.30426, 466.11743, 486.4818, 522.68506, 552.1002, 411.8125, 606.40515, 341.66858)
+
+[node name="BeerTaps" type="Sprite2D" parent="map"]
+z_index = -1
+position = Vector2(580.75, 326)
+scale = Vector2(2.1990476, 1.8857143)
+texture = ExtResource("3_wlvwx")
 
 [node name="watarGen" type="Marker2D" parent="." groups=["waterGenerator"]]
-position = Vector2(580, 188)
+z_index = 3
+position = Vector2(893, 251)
 script = ExtResource("5_hitjv")
 spawnRad = 10.0
+viewport_root_path = NodePath("../Particle Viewport/Viewport Root")
+
+[node name="Particle Viewport" type="SubViewport" parent="."]
+transparent_bg = true
+
+[node name="Viewport Root" type="Node2D" parent="Particle Viewport"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_wlvwx")
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 1158.0
+offset_bottom = 663.0
