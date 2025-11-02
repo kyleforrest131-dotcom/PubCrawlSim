@@ -1,6 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5we2j5a2u4ix"]
+[gd_scene load_steps=5 format=3 uid="uid://brfh7551nvc16"]
 
-[ext_resource type="Script" uid="uid://dutdjwwtorilr" path="res://pint game/pint_game.gd" id="1_rnivv"]
+[ext_resource type="Script" uid="uid://7ekqvm21ha6r" path="res://pint game/water.gd" id="1_s3ltw"]
+[ext_resource type="Shader" uid="uid://oksad203ev8j" path="res://pint game/waterEffect.gdshader" id="3_7uqn3"]
+[ext_resource type="Script" uid="uid://livuw5awvw2q" path="res://pint game/waterGenerator.gd" id="5_hitjv"]
 
-[node name="PintGame" type="Node2D"]
-script = ExtResource("1_rnivv")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2v82y"]
+shader = ExtResource("3_7uqn3")
+shader_parameter/TG_COLOR = Color(1, 0, 1, 1)
+shader_parameter/color_detect_threshold = 0.7
+
+[node name="supaWatar" type="Node2D"]
+script = ExtResource("1_s3ltw")
+
+[node name="waterShader" type="Sprite2D" parent="."]
+z_index = 1
+material = SubResource("ShaderMaterial_2v82y")
+position = Vector2(617, 263)
+scale = Vector2(9.25, 9.0625)
+
+[node name="map" type="StaticBody2D" parent="."]
+position = Vector2(-2, 5)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="map"]
+position = Vector2(284, 323)
+scale = Vector2(0.44194877, 0.44194877)
+polygon = PackedVector2Array(-16, 648, 1168, 648, 1168, -504, 1032, 480, 890.31494, 449.94556, 768, 424, 760, -72, 624, 504, 990, 619, 24, 616, 392, 480, 616, -120, 544, -56, 400, -24, 232, -64, 128, -168, -16, -504)
+
+[node name="watarGen" type="Marker2D" parent="." groups=["waterGenerator"]]
+position = Vector2(580, 188)
+script = ExtResource("5_hitjv")
+spawnRad = 10.0
