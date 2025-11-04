@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://m2ktnkn3jhj1"]
+
+[ext_resource type="Script" uid="uid://bjlpqicojdov" path="res://cone game/cone_controller.gd" id="1_u0elp"]
+[ext_resource type="Texture2D" uid="uid://f21u3niaisdn" path="res://cone game/traffic_cone.png" id="2_kocbs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gvldi"]
+
+[sub_resource type="Curve" id="Curve_u0elp"]
+_data = [Vector2(0, 0.348315), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Cone" type="RigidBody2D"]
+script = ExtResource("1_u0elp")
+
+[node name="TrafficCone" type="Sprite2D" parent="."]
+position = Vector2(0.9999999, -35.000004)
+scale = Vector2(0.1260481, 0.09289161)
+texture = ExtResource("2_kocbs")
+
+[node name="orange" type="Polygon2D" parent="."]
+visible = false
+position = Vector2(-0.0196686, 60.1279)
+scale = Vector2(9.58788, 9.58788)
+color = Color(1, 0.5, 0, 1)
+texture_offset = Vector2(-0.105, 0)
+polygon = PackedVector2Array(-5, -2, -6, 0, 6, 0, 5, -2, 4, -2, 1, -17, -1, -17, -4, -2)
+
+[node name="white" type="Polygon2D" parent="."]
+visible = false
+position = Vector2(-0.0196686, 60.1279)
+scale = Vector2(9.58788, 9.58788)
+color = Color(0.78, 0.78, 0.78, 1)
+texture_offset = Vector2(-0.105, 0)
+polygon = PackedVector2Array(3.13977, -6.27955, 1.74432, -13.2568, -1.74432, -13.2568, -3.13977, -6.27955)
+
+[node name="black" type="Polygon2D" parent="."]
+visible = false
+position = Vector2(-0.0196686, 60.1279)
+scale = Vector2(9.58788, 9.58788)
+color = Color(0.0209852, 0.00449171, 0, 1)
+texture_offset = Vector2(-0.105, 0)
+polygon = PackedVector2Array(-4.95387, -1.95364, -6, 0, 6, 0, 5, -2, 4, -2, -3.97705, -1.95364)
+
+[node name="w" type="CollisionPolygon2D" parent="."]
+position = Vector2(1, 8.999996)
+scale = Vector2(0.37088162, 0.37088162)
+polygon = PackedVector2Array(88.194885, -14.948288, 103.14317, 10.4637985, 103.14317, 17.937943, 73.246605, 25.412086, -77.73109, 25.412086, -106.13283, 14.94828, -104.638, 7.474144, -79.225914, -23.91726, -56.803486, -25.412086, -11.958629, -239.17258, -8.968971, -251.13121, 10.4638, -251.13121, 11.958629, -239.17258, 55.30866, -25.412086, 83.7104, -20.9276)
+
+[node name="Line2D" type="Line2D" parent="."]
+material = SubResource("ShaderMaterial_gvldi")
+scale = Vector2(0.37088162, 0.37088162)
+width = 20.0
+width_curve = SubResource("Curve_u0elp")
+texture_mode = 1
+joint_mode = 1
+begin_cap_mode = 1
+end_cap_mode = 2
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="w" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(1, 8.999996)
+scale = Vector2(0.37088162, 0.37088162)
+polygon = PackedVector2Array(88.194885, -14.948288, 103.14317, 10.4637985, 103.14317, 17.937943, 73.246605, 25.412086, -77.73109, 25.412086, -106.13283, 14.94828, -104.638, 7.474144, -79.225914, -23.91726, -56.803486, -25.412086, -11.958629, -239.17258, -8.968971, -251.13121, 10.4638, -251.13121, 11.958629, -239.17258, 55.30866, -25.412086, 83.7104, -20.9276)
