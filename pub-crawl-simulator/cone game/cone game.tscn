@@ -1,6 +1,66 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdnwlk1gj5urs"]
+[gd_scene load_steps=6 format=3 uid="uid://cdnwlk1gj5urs"]
 
 [ext_resource type="Script" uid="uid://t0rfra0a4fw1" path="res://cone game/cone_game.gd" id="1_uq8fd"]
+[ext_resource type="PackedScene" uid="uid://btffsdgyllcoe" path="res://cone game/duke.tscn" id="2_f2i73"]
+[ext_resource type="PackedScene" uid="uid://m2ktnkn3jhj1" path="res://cone game/cone.tscn" id="3_xrsmh"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xrsmh"]
+distance = 6.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xrsmh"]
+radius = 20.0
+height = 152.0
 
 [node name="ConeGame" type="Node2D"]
 script = ExtResource("1_uq8fd")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -11.0
+offset_top = -1.0
+offset_right = 1141.0
+offset_bottom = 647.0
+color = Color(0.04357267, 0.004389699, 0.19746822, 1)
+
+[node name="Duke" parent="." instance=ExtResource("2_f2i73")]
+position = Vector2(888, 603.00006)
+scale = Vector2(0.4480527, 0.4480527)
+
+[node name="Pedastool" parent="." instance=ExtResource("2_f2i73")]
+position = Vector2(205.00002, 732)
+rotation = 3.1415927
+scale = Vector2(0.4480527, 0.4480527)
+
+[node name="Cone" parent="." instance=ExtResource("3_xrsmh")]
+position = Vector2(192, 594)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(267, 656)
+shape = SubResource("WorldBoundaryShape2D_xrsmh")
+
+[node name="InstructionLabel" type="Label" parent="."]
+offset_left = 119.0
+offset_top = 94.0
+offset_right = 473.0
+offset_bottom = 143.0
+text = "Launch the cone onto Duke Wellington's head
+Press 'r' to reset"
+
+[node name="VictoryArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VictoryArea"]
+position = Vector2(885, 134)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_xrsmh")
+
+[node name="VictoryLabel" type="Label" parent="."]
+visible = false
+offset_left = 388.0
+offset_top = 276.0
+offset_right = 711.0
+offset_bottom = 434.0
+theme_override_font_sizes/font_size = 64
+text = "VICTORY!!"
+
+[connection signal="area_entered" from="VictoryArea" to="." method="_on_area_2d_area_entered"]
